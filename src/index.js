@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
-import App from './components/app';
 import Home from './components/home';
 import reducers from './reducers';
 

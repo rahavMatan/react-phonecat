@@ -29,8 +29,10 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "lodash": "^3.10.1",
+    "nodemon": "^1.11.0",
     "react": "15",
     "react-dom": "15",
     "react-redux": "5",
