@@ -25,11 +25,13 @@
     "mocha": "^2.4.5",
     "react-addons-test-utils": "^0.14.7",
     "webpack": "2",
-    "webpack-dev-server": "^1.14.0"
+    "webpack-dev-server": "2"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-preset-stage-1": "^6.1.18",
     "body-parser": "^1.17.2",
+    "cors": "^2.8.3",
     "express": "^4.15.3",
     "lodash": "^3.10.1",
     "nodemon": "^1.11.0",
@@ -39,6 +41,7 @@
     "react-router": "^2.0.1",
     "react-router-dom": "^4.1.1",
     "redux": "^3.0.4",
+    "redux-promise-middleware": "^4.3.0",
     "ui-router-react": "^0.5.0"
   }
 }
