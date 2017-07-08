@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import allReducer from './all-reducer';
+import listReducer from './list-reducer';
 import phoneReducer from './phone-reducer';
 const rootReducer = combineReducers({
-  all:allReducer,
+  filtered:listReducer,
   phone:phoneReducer
 });
 

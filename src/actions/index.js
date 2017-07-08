@@ -1,16 +1,26 @@
 import axios from 'axios';
 
 export function getAll(){
-  console.log('getting');
-  var req= axios.get('src/phones/phones.json')
-    .then(function(res){
-      console.log(res);
-    },
-  function(err){
-    console.log(err);
-  })
+  var req= axios.get('src/phones/phones.json');
   return {
     type:'getAll',
     payload:req
   }
+}
+
+export function getFiltered(text=" "){
+  return {
+    type:'getFiltered',
+    payload:text
+  }
+}
+export function sortBy(field='age'){
+  return {
+    type:'sortBy',
+    payload:field
+  }
+}
+
+export function orderBy(field){
+
 }
