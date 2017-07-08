@@ -6,11 +6,13 @@ export default function(state=[], action){
     case 'getAll':
       return action.payload.data;
     case 'getFiltered':
-      return _.filter(state,function(phone){
-        return _.includes(phone.name.toLowerCase(),action.payload.toLowerCase()) || _.includes(phone.snippet.toLowerCase(),action.payload.toLowerCase())
+     var {text,phones}=action.payload;
+      console.log(text);
+      return _.filter(phones,function(phone){
+        return _.includes(phone.name.toLowerCase(),text.toLowerCase()) || _.includes(phone.snippet.toLowerCase(),text.toLowerCase())
       });
     case 'sortBy':
-      return _.sortBy(state,action.payload)
+      return _.sortBy( state,(phone)=>(phone[action.payload].toLowerCase() ) )
     default:
       return state;
   }

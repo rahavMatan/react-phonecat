@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {getFiltered, getAll, sortBy} from '../actions'
+import ListItem from './list-item';
+import SearchBar from './search-bar';
 
 class List extends Component {
   componentWillMount(){
     this.props.getAll();
   }
+  renderList(){
+    return this.props.filtered.map(phone=>{
+      return (
+        <ListItem key={phone.id} phone={phone} />
+      )
+    })
+  }
   render() {
-    console.log(this.props.filtered);
     if(!this.props.filtered.length){
       return(
         <h2>Loading..</h2>
@@ -16,12 +24,13 @@ class List extends Component {
     return (
       <div className="row">
         <div className="col-md-3">
-          serach
+          <SearchBar />
         </div>
         <div className="col-md-8">
-          list
-          <button onClick={()=>{this.props.getFiltered('')}}>filter</button>
-          <button onClick={()=>{this.props.sortBy('name')}}>sort</button>
+          <ul className="list-group">
+            { this.renderList()}
+          </ul>
+
         </div>
       </div>
     );
