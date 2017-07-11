@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 import promise from "redux-promise";
 
 import List from './components/list';
+import Phone from './components/phone';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -15,9 +16,10 @@ ReactDOM.render(
     <BrowserRouter>
      <div>
       <Switch>
-        <Route path="/" component={List} />
+        <Route exact path="/" component={List} />
+        <Route path="/:id" component={Phone} />
       </Switch>
      </div>
     </BrowserRouter>
   </Provider>
-  , document.querySelector('.container'));
+  , document.querySelector('.container-fluid'));

@@ -1,14 +1,21 @@
 import axios from 'axios';
+var url = 'src/phones/phones.json';
+var serverUrl = 'http://localhost:3000'
 var phones;
+var orderBy="age";
 
 export function getAll(){
-  var req= axios.get('src/phones/phones.json')
-  req.then(function(res){
-    phones =res.data
-  });
+  var req;
+  if(!phones){
+    req = axios.get(serverUrl+'/api/phones');
+    req.then(function(res){
+      phones = res.data
+    });
+  }
+  var payload = phones ? phones : req;
   return {
     type:'getAll',
-    payload:req
+    payload
   }
 }
 
@@ -17,17 +24,16 @@ export function getFiltered(text=""){
     type:'getFiltered',
     payload:{
       text,
-      phones
+      phones,
+      orderBy
     }
   }
 }
-export function sortBy(field='age'){
+
+export function sortBy(field="age"){
+  orderBy=field
   return {
     type:'sortBy',
     payload:field
   }
-}
-
-export function orderBy(field){
-
 }

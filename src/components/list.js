@@ -9,6 +9,11 @@ class List extends Component {
     this.props.getAll();
   }
   renderList(){
+    if(!this.props.filtered.length){
+      return(
+        <h2>no phones to found..</h2>
+      )
+    };
     return this.props.filtered.map(phone=>{
       return (
         <ListItem key={phone.id} phone={phone} />
@@ -16,21 +21,15 @@ class List extends Component {
     })
   }
   render() {
-    if(!this.props.filtered.length){
-      return(
-        <h2>Loading..</h2>
-      )
-    };
     return (
       <div className="row">
-        <div className="col-md-3">
+        <div className="col-md-2 search-container">
           <SearchBar />
         </div>
-        <div className="col-md-8">
+        <div className="col-md-8 list-container">
           <ul className="list-group">
             { this.renderList()}
           </ul>
-
         </div>
       </div>
     );
