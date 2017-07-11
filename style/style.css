@@ -4,11 +4,19 @@
 .list-group-item{
   margin-bottom: 10px;
   margin-top: 10px;
-}
-.list-group-item{
   border-radius: 5px;
+  height: 115px;
 }
-.list-container, .search-container{
+.list-container{
   margin-top: 30px;
   margin-bottom: 30px;
+}
+.search-container{
+  margin-top: 40px;
+}
+
+.list-thumbs{
+  height: 100px;
+  float: left;
+  margin-right: 10px;
 }

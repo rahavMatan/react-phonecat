@@ -11,7 +11,7 @@ class List extends Component {
   renderList(){
     if(!this.props.filtered.length){
       return(
-        <h2>no phones to found..</h2>
+        <h2>no phones found..</h2>
       )
     };
     return this.props.filtered.map(phone=>{
