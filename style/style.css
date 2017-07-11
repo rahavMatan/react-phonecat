@@ -20,3 +20,10 @@
   float: left;
   margin-right: 10px;
 }
+
+.main-image{
+  margin-top:50px;
+  margin-left:25px;
+  width: 100%;
+  height: 350px;
+}

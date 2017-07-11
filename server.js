@@ -21,13 +21,12 @@ var router = express.Router();
 
 router.route('/phones')
   .get(function(req,res){
-    console.log('req');
     res.json( require('./src/phones/phones.json'));
   })
 
-router.route('/phones/:phoneName')
+router.route('/phones/:id')
   .get(function(req,res){
-    res.json( require(`./src/phones/${req.params.phoneName}.json`))
+    res.json( require(`./src/phones/${req.params.id}.json`))
   })
 
 app.use('/api', router);

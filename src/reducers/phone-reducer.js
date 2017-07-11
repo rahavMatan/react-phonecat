@@ -1,7 +1,8 @@
-export default function(state={}, action){
+
+export default function(state=null, action){
   switch (action.type) {
-    case 'getListe':
-      return action.payload;
+    case 'getPhone':
+      return action.payload.data;
     default:
       return state;
   }
