@@ -1,5 +1,5 @@
 .container{
-    width: 85%;
+    width: 100%;
 }
 .list-group-item{
   margin-bottom: 10px;
@@ -21,9 +21,33 @@
   margin-right: 10px;
 }
 
-.main-image{
+.top-row{
   margin-top:50px;
+}
+
+.main-image{
   margin-left:25px;
-  width: 100%;
+  width: 350px;
   height: 350px;
+}
+.main-description{
+
+}
+.bottom-border{
+  border-bottom: 1px solid black;
+}
+.thumbs-container{
+  margin-left: 15px;
+}
+
+.thumb-container{
+  border: 1px solid black;
+  margin-right: 15px;
+  width: 120px;
+  height: 100px;
+}
+.phone-thumbs{
+  width: 100%;
+  height: 100%;
+  padding: 10px;
 }

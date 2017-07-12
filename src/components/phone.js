@@ -18,8 +18,19 @@ class Phone extends Component{
     }
     this.props.getPhone(this.props.match.params.id, cb);
   }
+  renderThumbnails(){
+    var { images,id }= this.props.phone;
+    return images.map((url,index)=>{
+      return(
+        <div key={index} className="col-md-1 thumb-container">
+          <img className="phone-thumbs" src={url} />
+        </div>
+      )
+    })
+  }
   render(){
-    if(!this.props.phone){
+    var {phone} = this.props
+    if(!phone){
       return (
         <h2>Loading..</h2>
       )
@@ -31,7 +42,13 @@ class Phone extends Component{
             <img src={this.state.mainImageUrl} className="main-image" />
           </div>
           <div className="main-description col-sm-8">
-           main titele
+            <div className="bottom-border"><h2>{phone.name}</h2></div>
+            <p>{phone.description}</p>
+            <div className="row">
+              <div className="thumbs-container">
+                  {this.renderThumbnails()}
+              </div>
+            </div>
           </div>
         </div>
         <div className="row bottom-row">
