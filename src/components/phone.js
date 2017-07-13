@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux';
 import {getPhone} from '../actions'
+import PhoneDetails from './phone-details'
+import _ from 'lodash';
+import { CSSTransitionGroup } from 'react-transition-group' // ES6
 
 class Phone extends Component{
   constructor(props){
@@ -18,11 +21,16 @@ class Phone extends Component{
     }
     this.props.getPhone(this.props.match.params.id, cb);
   }
+  changeMainImage(index){
+    this.setState({
+      mainImageUrl:this.props.phone.images[index]
+    })
+  }
   renderThumbnails(){
     var { images,id }= this.props.phone;
     return images.map((url,index)=>{
       return(
-        <div key={index} className="col-md-1 thumb-container">
+        <div key={index} className="col-md-1 thumb-container" onClick={()=>{this.changeMainImage(index)}}>
           <img className="phone-thumbs" src={url} />
         </div>
       )
@@ -51,9 +59,11 @@ class Phone extends Component{
             </div>
           </div>
         </div>
-        <div className="row bottom-row">
 
+        <div className="bottom-row">
+          <PhoneDetails phone={phone}/>
         </div>
+
       </div>
     )
   }

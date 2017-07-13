@@ -1,0 +1,44 @@
+.example-enter {
+  height: 10px;
+  overflow: hidden;
+  transition: 0.5s linear all;
+}
+
+.example-enter.example-enter-active {
+  height: 120px;
+  margin-bottom: 20px;
+  opacity: 1;
+  padding-bottom: 4px;
+  padding-top: 15px;
+}
+
+.example-leave {
+  overflow: hidden;
+  transition: 0.5s linear all;
+}
+
+.example-leave.example-leave-active {
+  height: 0;
+  margin-bottom: 0;
+  opacity: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.img-enter {
+  opacity: 0.01;
+}
+
+.img-enter.img-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.img-leave {
+  opacity: 1;
+}
+
+.img-leave.img-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

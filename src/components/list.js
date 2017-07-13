@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {getFiltered, getAll, sortBy} from '../actions'
 import ListItem from './list-item';
 import SearchBar from './search-bar';
+import { CSSTransitionGroup } from 'react-transition-group' // ES6
 
 class List extends Component {
   componentWillMount(){
@@ -22,16 +23,29 @@ class List extends Component {
   }
   render() {
     return (
+
       <div className="row">
+
         <div className="col-md-2 search-container">
           <SearchBar />
         </div>
         <div className="col-md-8 list-container">
+
+
           <ul className="list-group">
+            <CSSTransitionGroup transitionName="example"
+                transitionEnterTimeout={500}
+                transitionLeaveTimeout={500}>
+
             { this.renderList()}
+
+            </CSSTransitionGroup>
           </ul>
+
         </div>
+
       </div>
+
     );
   }
 }

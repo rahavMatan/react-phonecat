@@ -6,8 +6,8 @@ export default class ListItem extends Component {
   render(){
     var {phone} = this.props;
     return (
-      <li className="list-group-item rounded">
-
+      <li className="list-group-item rounded phone-list-item">
+        <div className="">
         <Link to={`/${phone.id}`}>
             <img className="  list-thumbs" src={phone.imageUrl} />
         </Link>
@@ -17,7 +17,7 @@ export default class ListItem extends Component {
         <p>
           {phone.snippet}
         </p>
-
+        </div>
       </li>
     )
   }
