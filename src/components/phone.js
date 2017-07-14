@@ -47,7 +47,10 @@ class Phone extends Component{
       <div>
         <div className="row top-row">
           <div className="main-pic col-sm-3">
-            <img src={this.state.mainImageUrl} className="main-image" />
+            <CSSTransitionGroup transitionName="slide"
+               transitionEnterTimeout={300} transitionLeaveTimeout={300}>
+            <img src={this.state.mainImageUrl} className="main-image" key={this.state.mainImageUrl}/>
+            </CSSTransitionGroup>
           </div>
           <div className="main-description col-sm-8">
             <div className="bottom-border"><h2>{phone.name}</h2></div>

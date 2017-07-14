@@ -30,20 +30,15 @@ class List extends Component {
           <SearchBar />
         </div>
         <div className="col-md-8 list-container">
-
-
           <ul className="list-group">
+
             <CSSTransitionGroup transitionName="example"
-                transitionEnterTimeout={500}
-                transitionLeaveTimeout={500}>
-
-            { this.renderList()}
-
+                                transitionEnterTimeout={500}  transitionLeaveTimeout={500}>
+                { this.renderList()}
             </CSSTransitionGroup>
+
           </ul>
-
         </div>
-
       </div>
 
     );
