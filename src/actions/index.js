@@ -1,5 +1,5 @@
 import axios from 'axios';
-var url = 'src/phones/phones.json';
+var staticUrl = 'src/phones/phones.json';
 var serverUrl = 'http://localhost:3000'
 var phones;
 var orderBy="age";

@@ -33,7 +33,8 @@ class List extends Component {
           <ul className="list-group">
 
             <CSSTransitionGroup transitionName="example"
-                                transitionEnterTimeout={500}  transitionLeaveTimeout={500}>
+                                transitionEnterTimeout={500}  transitionLeaveTimeout={500} transitionAppear={true}
+                                transitionAppearTimeout={500}>
                 { this.renderList()}
             </CSSTransitionGroup>
 

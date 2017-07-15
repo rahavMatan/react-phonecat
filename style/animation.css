@@ -1,3 +1,15 @@
+.example-appear{
+  height: 10px;
+  overflow: hidden;
+  transition: 0.5s linear all;
+}
+.example-appear.example-appear-active{
+  height: 120px;
+  margin-bottom: 20px;
+  opacity: 1;
+  padding-bottom: 4px;
+  padding-top: 15px;
+}
 .example-enter {
   height: 10px;
   overflow: hidden;
@@ -24,14 +36,16 @@
   padding-bottom: 0;
   padding-top: 0;
 }
-.slide-leave{
-  display: none;
-}
+
 .slide-enter{
   animation-name: slideDown;
 	animation-duration: 1s;
 	animation-timing-function: ease;
 	visibility: visible !important;
+}
+
+.slide-leave{
+  display: none;
 }
 
 @keyframes slideDown {
@@ -54,14 +68,24 @@
 		transform: translateY(0%);
 	}
 }
-.slide-enter.slide-enter-active{
-
+.fade-enter {
+  opacity: 0;
 }
-
-.slide-leave{
-
+.fade-leave {
+  opacity: 1;
 }
-
-.slide-leave.slide-leave-active{
-
+.fade-appear{
+  opacity: 0;
+}
+.fade-appear.fade-appear-active{
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.fade-leave.fade-leave-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
 }

@@ -19,7 +19,7 @@ export default function(state=[], action){
 
     case 'getFiltered':
       var {text,phones, orderBy}=action.payload;
-        return sort( filter(phones,text), orderBy);
+      return sort( filter(phones,text), orderBy);
 
     case 'sortBy':
       return sort(state, action.payload)
