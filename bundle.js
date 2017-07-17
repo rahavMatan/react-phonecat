@@ -5490,7 +5490,6 @@ function getAll() {
 function getPhone(id, cb) {
   var payload = _axios2.default.get(serverUrl + '/api/phones/' + id);
   payload.then(function (res) {
-    console.log(res);
     if (res.data.type !== 'error') cb(res.data.images[0]);
   });
   return {
@@ -32340,7 +32339,12 @@ _reactDom2.default.render(_react2.default.createElement(
                 _reactRouterDom.Switch,
                 null,
                 _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _list2.default }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/:id', component: _phone2.default })
+                _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/:id', component: _phone2.default }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/:id/:params', render: function render(_ref2) {
+                    var location = _ref2.location;
+
+                    return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
+                  } })
               )
             )
           );

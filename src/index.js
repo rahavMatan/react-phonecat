@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Link, Switch, Redirect } from 'react-router-dom'
 import promise from "redux-promise";
 import { CSSTransitionGroup } from 'react-transition-group' // ES6
 import List from './components/list';
@@ -22,7 +22,10 @@ ReactDOM.render(
             <Route location={location} key={location.key}>
               <Switch>
                 <Route exact path="/" component={List} />
-                <Route path="/:id" component={Phone} />
+                <Route exact path="/:id" component={Phone} />
+                <Route path="/:id/:params" render={({location})=>{
+                    return ( <Redirect to="/"/>)
+                  }}/>
               </Switch>
             </Route>
           </CSSTransitionGroup>

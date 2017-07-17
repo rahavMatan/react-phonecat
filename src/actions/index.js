@@ -22,7 +22,6 @@ export function getAll(){
 export function getPhone(id,cb ){
   var payload = axios.get(serverUrl+'/api/phones/'+id);
   payload.then(function(res){
-    console.log(res);
     if(res.data.type !== 'error')
       cb(res.data.images[0]);
   })
