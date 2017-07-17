@@ -5490,7 +5490,8 @@ function getAll() {
 function getPhone(id, cb) {
   var payload = _axios2.default.get(serverUrl + '/api/phones/' + id);
   payload.then(function (res) {
-    if (res.type !== 'error') cb(res.data.images[0]);
+    console.log(res);
+    if (res.data.type !== 'error') cb(res.data.images[0]);
   });
   return {
     type: 'getPhone',
