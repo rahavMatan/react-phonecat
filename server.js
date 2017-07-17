@@ -2,6 +2,7 @@ var express= require ('express');
 var app = express();
 var bodyParser = require('body-parser');
 var cors = require('cors')
+var fs = require('fs');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,7 +18,13 @@ router.route('/phones')
 
 router.route('/phones/:id')
   .get(function(req,res){
-    res.json( require(`./src/phones/${req.params.id}.json`))
+    var payload;
+    if(fs.existsSync(`./src/phones/${req.params.id}.json`)){
+      payload = require(`./src/phones/${req.params.id}.json`);
+    } else {
+      payload={type:'error'}
+    }
+    res.json(payload )
   })
 
 app.use('/api', router);

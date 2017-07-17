@@ -5490,7 +5490,7 @@ function getAll() {
 function getPhone(id, cb) {
   var payload = _axios2.default.get(serverUrl + '/api/phones/' + id);
   payload.then(function (res) {
-    cb(res.data.images[0]);
+    if (res.type !== 'error') cb(res.data.images[0]);
   });
   return {
     type: 'getPhone',
@@ -30967,6 +30967,17 @@ var Phone = function (_Component) {
           'h2',
           null,
           'Loading..'
+        );
+      }
+      if (phone.type == 'error') {
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'h3',
+            null,
+            'can\'t find requested phone..'
+          )
         );
       }
       return _react2.default.createElement(

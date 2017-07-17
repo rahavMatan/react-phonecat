@@ -43,6 +43,13 @@ class Phone extends Component{
         <h2>Loading..</h2>
       )
     }
+    if(phone.type=='error'){
+      return (
+        <div>
+          <h3>can't find requested phone..</h3>
+        </div>
+      )
+    }
     return (
       <div>
         <div className="row top-row">
