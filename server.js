@@ -21,10 +21,13 @@ router.route('/phones/:id')
   })
 
 app.use('/api', router);
-
-app.get('/',function(req,res){
-  res.send('index')
+app.use(function(req, res){
+  res.sendFile(`${__dirname}/index.html`)
 })
+// app.get('/',function(req,res){
+//   console.log('req');
+//   res.send('index')
+// })
 
 app.listen(3000, function () {
   console.log('app listening on port 3000!')
